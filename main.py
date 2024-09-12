@@ -1,2 +1,0 @@
-name = "Dima"
-print(name)
