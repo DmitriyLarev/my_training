@@ -18,6 +18,7 @@ class WordsFinder:
 
     def find(self, word):
         dict_ = {}
+        word = word.lower()
         for name, words in self.get_all_words().items():
             if word in words:
                 dict_[name] = words.index(word) + 1
@@ -25,6 +26,7 @@ class WordsFinder:
 
     def count(self, word):
         dict_ = {}
+        word = word.lower()
         counter = 0
         for name, words in self.get_all_words().items():
             for i in words:
@@ -35,5 +37,5 @@ class WordsFinder:
 
 finder1 = WordsFinder('Walt Whitman - O Captain! My Captain!.txt')
 print(finder1.get_all_words())
-print(finder1.find('captain'))
-print(finder1.count('captain'))
+print(finder1.find('Captain'))
+print(finder1.count('CAPTAIN'))
