@@ -14,15 +14,15 @@ balance INTEGER NOT NULL
 ''')
 
 # age = 0
-# for i in range(1, 11): #  добавление данных в таблицу
+# for i in range(1, 11):  # добавление данных в таблицу
 #     age += 10
 #     cursor.execute('INSERT INTO Users (username, email, age, balance) VALUES (?, ?, ?, ?)',
 #                    (f'User{i}', f'example{i}@gmail.com', age, 1000))
 
-# for i in range(1, 11, 2): #  обновление данных в таблице
+# for i in range(1, 11, 2):  # обновление данных в таблице
 #     cursor.execute('UPDATE Users SET balance = ? WHERE id = ?', (500, i))
 
-# for i in range(1, 11, 3): #  удаление данных
+# for i in range(1, 11, 3):  # удаление данных
 #     cursor.execute('DELETE FROM Users WHERE id = ?', (i,))
 
 cursor.execute('SELECT * FROM Users WHERE age != 60')
