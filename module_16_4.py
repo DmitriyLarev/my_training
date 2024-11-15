@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, constr, conint
 from typing import List, Type
 
 app = FastAPI()
@@ -9,11 +9,11 @@ users = []
 
 class User(BaseModel):
     id: int
-    username: str
-    age: int
+    username: constr(min_length=1, max_length=20)
+    age: conint(ge=18, le=120)
 
 
-@app.get('/')
+@app.get('/users')
 async def get_users() -> List[User]:
     return users
 
